@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3D Printer Job Queuer</title>
+    </head>
+    <body>
+        <h1>Upload a file</h1>
+        <form action="/api/upload" method="post" enctype="multipart/form-data">
+            <!-- This form will upload a file and send it to /api/upload -->
+            <label for="gcodefile">Select a GCode file:</label>
+            <input type="file" id="gcodefile" accept=".gcode" name="gcodefile"/>
+            <br/>
+            <input type="submit" value="Print"/>
+        </form>
+    </body>
+</html>
