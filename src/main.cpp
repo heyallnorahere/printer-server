@@ -35,7 +35,7 @@ static void file_handler(const std::shared_ptr<restbed::Session> session) {
 static std::string get_filename(const std::string& data) {
     std::string paramname = "filename";
     size_t pos = data.find(paramname);
-    size_t data_begins = pos + paramname.length() + 2;
+    size_t data_begins = pos + paramname.length() + 2 /* =" */;
     size_t data_ends = data.find("\"", data_begins);
     return data.substr(data_begins, data_ends - data_begins);
 }

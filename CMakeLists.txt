@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project("printer-server")
-add_subdirectory("vendor/restbed")
+if(UNIX AND NOT APPLE)
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-narrowing -pthread")
+endif()
+add_subdirectory("vendor")
 add_subdirectory("src")
